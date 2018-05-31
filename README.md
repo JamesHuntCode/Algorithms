@@ -17,3 +17,4 @@ Algorithms Examples Included:
 - Binary Search (Iterative & Recursive)
 - Graph & Tree Traversal
 - Sorting (Selection, Integer, Merge, Bucket, Quicksort etc)
+- Shuffling 
