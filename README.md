@@ -3,7 +3,7 @@ A few examples of common data structures and algorithms learned from university 
 
 Data Structure Examples Included:
 
--Arrays
+- Arrays
 - Lists
 - Linked Lists
 - Stacks
