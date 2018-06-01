@@ -12,7 +12,7 @@ Data Structure Examples Included:
 - Graphs
 - Hash Tables
 
-Algorithms Examples Included:
+Algorithm Examples Included:
 
 - Linear Search
 - Binary Search (Iterative & Recursive)
