@@ -10,11 +10,13 @@ Data Structure Examples Included:
 - Queues
 - Trees
 - Graphs
+- Hash Tables
 
 Algorithms Examples Included:
 
 - Linear Search
 - Binary Search (Iterative & Recursive)
 - Graph & Tree Traversal
+- Pathfinding
 - Sorting (Selection, Integer, Merge, Bucket, Quicksort etc)
 - Shuffling 
