@@ -1,7 +1,8 @@
 // Program to demonstrate an algorithm used to shuffle an array.
 
-/// Method to perform and in place shuffle of an array (Fisher-Yates algorithm).
+/// Method to perform an-in place shuffle of an array (Fisher-Yates algorithm).
 var Shuffle = function (array) {
+
     var currentIndex = array.length;
     var temporaryValue;
     var randomIndex;
@@ -17,11 +18,12 @@ var Shuffle = function (array) {
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
-        
+
     }
 
     // Return shuffled array.
     return array;
+    
 }
 
 /// Main function.
