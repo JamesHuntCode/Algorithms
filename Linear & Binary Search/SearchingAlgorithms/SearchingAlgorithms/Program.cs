@@ -91,7 +91,7 @@ namespace SearchingAlgorithms
         /// <returns></returns>
         static int IterativeBinarySearch(int[] dataset, int searchingFor)
         {
-            int top = dataset.Length;
+            int top = dataset.Length - 1;
             int bottom = 0;
             bool isFound = false;
 
@@ -109,7 +109,7 @@ namespace SearchingAlgorithms
                 }
                 else
                 {
-                    bottom = (mid + 1);
+                    bottom = mid;
                 }
             }
             
