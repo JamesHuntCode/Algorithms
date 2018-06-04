@@ -1,0 +1,7 @@
+C:\git\Algorithms\Linear & Binary Search\SearchingAlgorithms\SearchingAlgorithms\bin\Debug\SearchingAlgorithms.exe.config
+C:\git\Algorithms\Linear & Binary Search\SearchingAlgorithms\SearchingAlgorithms\bin\Debug\SearchingAlgorithms.exe
+C:\git\Algorithms\Linear & Binary Search\SearchingAlgorithms\SearchingAlgorithms\bin\Debug\SearchingAlgorithms.pdb
+C:\git\Algorithms\Linear & Binary Search\SearchingAlgorithms\SearchingAlgorithms\obj\Debug\SearchingAlgorithms.csprojResolveAssemblyReference.cache
+C:\git\Algorithms\Linear & Binary Search\SearchingAlgorithms\SearchingAlgorithms\obj\Debug\SearchingAlgorithms.csproj.CoreCompileInputs.cache
+C:\git\Algorithms\Linear & Binary Search\SearchingAlgorithms\SearchingAlgorithms\obj\Debug\SearchingAlgorithms.exe
+C:\git\Algorithms\Linear & Binary Search\SearchingAlgorithms\SearchingAlgorithms\obj\Debug\SearchingAlgorithms.pdb
