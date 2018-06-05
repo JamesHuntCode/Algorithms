@@ -52,13 +52,13 @@ class LinkedList
     /** will return a boolean value indicating if the list contains any nodes **/
     public boolean isEmpty()
     {
-        return true;
+        return listHead == null;
     }
     
-    /** will return the first node in the list (not the list head though) **/
+    /** will return the first node in the list (after the list head) **/
     public Node firstElement()
     {
-        return new Node();
+        return listHead.nextNode;
     }
     
     /** will return the last node in the list **/
@@ -70,7 +70,8 @@ class LinkedList
     /** will add a new node to the back of the list **/
     public void addNode(Node newNode)
     {
-        
+        lastElement().nextNode = newNode;
+        newNode.nextNode = null;
     }
     
     /** will return an integer value indicating the number of nodes stored in the list **/
