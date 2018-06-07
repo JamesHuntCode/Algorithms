@@ -5,6 +5,13 @@ public class StackDemo {
     /** Program to demonstrate implementation of a stack data structure **/
     public static void main(String[] args) {
         
+        // Declare a stack.
+        Stack myStack = new Stack();
+        
+        for (int i = 0; i < 50; i++)
+        {
+            myStack.push(new Element(i + 1));
+        }
     }
     
 }
@@ -12,17 +19,20 @@ public class StackDemo {
 /** simple representation of a stack (first in - last out) **/
 class Stack
 {
+    /** index of the element at the top of the stack **/
+    int top;
+    
     /** single dimension array containing all elements currently inside the stack **/
     Element[] data = new Element[100];
     
     /** method to determine if the stack contains any elements **/
     public boolean isEmpty()
     {
-        return true;
+        return data.length > 0;
     }
     
     /** method to add an element to the top of the stack **/
-    public void push(int element)
+    public void push(Element element)
     {
         
     }
@@ -33,6 +43,12 @@ class Stack
         
     }
     
+    /** method to search the stack for an element with a specific value **/
+    public Element search(Element elementToFind)
+    {
+        return new Element(-1);
+    }
+    
     /** method to return the number of elements currently inside the stack **/
     public int size()
     {
@@ -40,9 +56,9 @@ class Stack
     }
     
     /** method to return the element currently on top of the stack **/
-    public Element top()
+    public Element topElement()
     {
-        return new Element(-1);
+        return data[top];
     }
 }
 
