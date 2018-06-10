@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package binarytreedemo;
 
 /** program to demonstrate implementation of a traditional binary search tree **/
@@ -22,12 +17,15 @@ public class BinaryTreeDemo {
         }
         
         // Traverse tree.
+        System.out.print("\nBreadth first tree traversal example:\n\n");
         myTree.breadthFirstTraversal();
         
         // Remove an element from the tree.
+        System.out.print("\nNode with value 5 removed from the tree.\n\n");
         myTree.removeNode(new Node(5));
         
         // Traverse tree.
+        System.out.print("\nDepth first tree traversal example:\n\n");
         myTree.depthFirstTraversal();
         
         // Search the tree.
@@ -92,21 +90,35 @@ class BinarySearchTree
     /* return the amount of nodes currently in the tree **/
     public int nodeCount()
     {
-        return -1;
+        int nodeCounter = 0;
+        
+        
+        
+        return nodeCounter;
     }
     
     /** return the sum of all node data **/
     public int sum()
     {
-        return -1;
+        int nodeSum = 0;
+        
+        
+        
+        return nodeSum;
     }
 }
 
-/** node to be placed into binary tree (holds an integer value) **/
+/** node to be placed into binary tree (holds an integer value & links to child nodes) **/
 class Node
 {
     /** data held by the node **/
     int data;
+    
+    /** link to left child of 'this' (child on the left has a smaller value than 'this') **/
+    Node leftChild;
+    
+    /** link to right child of 'this' (child on the right has a greater value than 'this') **/
+    Node rightChild;
     
     /** constructor function **/
     public Node(int nodeData)
