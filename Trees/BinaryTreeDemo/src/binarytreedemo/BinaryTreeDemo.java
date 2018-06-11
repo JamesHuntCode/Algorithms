@@ -29,7 +29,7 @@ public class BinaryTreeDemo {
         myTree.depthFirstTraversal();
         
         // Search the tree.
-        boolean valueLocated = ((myTree.search(new Node(17)).data) != -1);
+        boolean valueLocated = ((myTree.search(new Node(17)).value) != -1);
         System.out.print("\nDoes the tree contain a 17? " + valueLocated + ".\n\n");
         
         // Is the tree empty?
@@ -60,25 +60,54 @@ class BinarySearchTree
     /** add a new node to the tree **/
     public void addNode(Node newNode)
     {
+        if (isEmpty())
+        {
+            rootNode = newNode;
+        }
+        else 
+        {
+            Node current = rootNode;
         
+            while ((current.left != null) && (current.right != null))
+            {
+                
+            }
+        }
     }
     
     /** remove a specific node from the tree **/
     public void removeNode(Node removeMe)
     {
+        int valueToRemove = removeMe.value;
         
+        Node current = rootNode;
+        
+        while ((current.left != null) && (current.right != null))
+        {
+            
+        }
     }
     
     /** traverse the tree implementing breadth first traversal **/
     public void breadthFirstTraversal()
     {
+        Node current = rootNode;
         
+        while ((current.left != null) && (current.right != null))
+        {
+            
+        }
     }
     
     /** traverse the tree implementing depth first traversal **/
     public void depthFirstTraversal()
     {
+        Node current = rootNode;
         
+        while ((current.left != null) && (current.right != null))
+        {
+            
+        }
     }
     
     /** method to locate a value in the tree, if no value is located, return -1 **/
@@ -92,7 +121,12 @@ class BinarySearchTree
     {
         int nodeCounter = 0;
         
+        Node current = rootNode;
         
+        while ((current.left != null) && (current.right != null))
+        {
+            
+        }
         
         return nodeCounter;
     }
@@ -102,7 +136,12 @@ class BinarySearchTree
     {
         int nodeSum = 0;
         
+        Node current = rootNode;
         
+        while ((current.left != null) && (current.right != null))
+        {
+            
+        }
         
         return nodeSum;
     }
@@ -112,17 +151,17 @@ class BinarySearchTree
 class Node
 {
     /** data held by the node **/
-    int data;
+    int value;
     
     /** link to left child of 'this' (child on the left has a smaller value than 'this') **/
-    Node leftChild;
+    Node left;
     
     /** link to right child of 'this' (child on the right has a greater value than 'this') **/
-    Node rightChild;
+    Node right;
     
     /** constructor function **/
-    public Node(int nodeData)
+    public Node(int nodeVal)
     {
-        data = nodeData;
+        value = nodeVal;
     }
 }
