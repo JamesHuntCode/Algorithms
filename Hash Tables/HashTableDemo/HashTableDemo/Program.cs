@@ -20,11 +20,25 @@ namespace HashTableDemo
             // Create new hash table.
             HashTable myTable = new HashTable();
 
-            // Add some entries.
-            for (int i = 0; i < 20; i++)
-            {
-                myTable.AddEntry("entry " + i.ToString());
-            }
+            // Add some data to the table (in this case, names).
+            myTable.AddEntry("James");
+            myTable.AddEntry("Samuel");
+            myTable.AddEntry("Alex");
+            myTable.AddEntry("Kanye");
+            myTable.AddEntry("Callum");
+            myTable.AddEntry("Alan");
+            myTable.AddEntry("Derek");
+            myTable.AddEntry("Sampson");
+            myTable.AddEntry("Joshua");
+            myTable.AddEntry("Dominic");
+            myTable.AddEntry("Lewis");
+
+            // Log all data entries to the console.
+            Console.WriteLine("Data currently in the hash table is as follows: \n");
+
+            myTable.Traverse();
+
+            Console.Read();
         }
     }
 
@@ -34,9 +48,9 @@ namespace HashTableDemo
     class HashTable
     {
         /// <summary>
-        /// Index of all possible letters in the alphabet pointing to indexes in the entries list.
+        /// Index of all possible letters in the alphabet pointing to indexes (buckets of data) in the entries list.
         /// </summary>
-        int[] indexes = new int[26];
+        List<int[,]> bucketIndecies = new List<int[,]>();
 
         /// <summary>
         /// List of strings that indexes in the index array will point too.
@@ -49,7 +63,7 @@ namespace HashTableDemo
         /// <returns></returns>
         public bool IsEmpty()
         {
-            return true;
+            return (entries.Count == 0);
         }
 
         /// <summary>
@@ -67,7 +81,7 @@ namespace HashTableDemo
         /// <returns></returns>
         public int Size()
         {
-            return entries.Count;
+            return (entries.Count);
         }
 
         /// <summary>
@@ -105,7 +119,7 @@ namespace HashTableDemo
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public string GetEntryAt(int index)
+        public string GetPreciseEntryAt(int index)
         {
             return entries[index];
         }
