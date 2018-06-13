@@ -17,7 +17,14 @@ namespace HashTableDemo
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            // Create new hash table.
+            HashTable myTable = new HashTable();
 
+            // Add some entries.
+            for (int i = 0; i < 20; i++)
+            {
+                myTable.AddEntry("entry " + i.ToString());
+            }
         }
     }
 
@@ -46,12 +53,21 @@ namespace HashTableDemo
         }
 
         /// <summary>
+        /// Add a new entry into the hash table.
+        /// </summary>
+        /// <param name="entry"></param>
+        public void AddEntry(string entry)
+        {
+            entries.Add(entry);
+        }
+
+        /// <summary>
         /// Return the number of elements inside the hash table.
         /// </summary>
         /// <returns></returns>
         public int Size()
         {
-            return -1;
+            return entries.Count;
         }
 
         /// <summary>
@@ -68,6 +84,36 @@ namespace HashTableDemo
         /// Visit every entry of the hash table (using the index array) and log the data element to the console.
         /// </summary>
         public void Traverse()
+        {
+            for (int i = 0; i < entries.Count; i++)
+            {
+                Console.WriteLine(entries[i]);
+            }
+        }
+
+        /// <summary>
+        /// Visit every entry in the hash table with the same first letter as the letter passed in.
+        /// </summary>
+        /// <param name="letter"></param>
+        public void TraverseSection(string letter)
+        {
+
+        }
+
+        /// <summary>
+        /// Return the string entry at the index passed in.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public string GetEntryAt(int index)
+        {
+            return entries[index];
+        }
+
+        /// <summary>
+        /// Log all data (including keys) to the console.
+        /// </summary>
+        public void LogAll()
         {
 
         }
