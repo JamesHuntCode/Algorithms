@@ -11,22 +11,26 @@ public class BinaryTreeDemo {
         // Add some nodes into the tree.
         myTree.rootNode = new Node(10);
         
-        for (int i = 1; i < 21; i++)
-        {
-            myTree.addNode(new Node(i));
-        }
+        myTree.rootNode.left = new Node(5);
+        myTree.rootNode.right = new Node(15);
+        
+        myTree.rootNode.left.left = new Node(2);
+        myTree.rootNode.left.right = new Node(7);
+        
+        myTree.rootNode.right.right = new Node(17);
+        myTree.rootNode.right.left = new Node(12);
         
         // Traverse tree.
-        System.out.print("\nBreadth first tree traversal example:\n\n");
-        myTree.breadthFirstTraversal();
+        System.out.print("\nDepth first tree traversal example:\n\n");
+        myTree.traverse(myTree.rootNode, "pre-order");
         
         // Remove an element from the tree.
         //System.out.print("\nNode with value 5 removed from the tree.\n\n");
         //myTree.removeNode(new Node(5));
         
         // Traverse tree.
-        //System.out.print("\nDepth first tree traversal example:\n\n");
-        //myTree.depthFirstTraversal();
+        //System.out.print("\nBreadth first tree traversal example:\n\n");
+        //myTree.breadthFirstTraversal();
         
         // Search the tree.
         //boolean valueLocated = ((myTree.search(new Node(17)).value) != -1);
@@ -60,61 +64,7 @@ class BinarySearchTree
     /** add a new node to the tree **/
     public void addNode(Node newNode)
     {
-        if (isEmpty())
-        {
-            rootNode = newNode;
-        }
-        else if (rootNode.left == null || rootNode.right == null)
-        {
-            if (newNode.value == rootNode.value)
-            {
-                System.out.print("Value already exists in the tree. Cannot add element.");
-            }
-            else if (newNode.value > rootNode.value)
-            {
-                rootNode.right = newNode;
-            }
-            else 
-            {
-                rootNode.left = newNode;
-            }
-        }
-        else 
-        {
-            Node current = rootNode;
-            int currentValue = current.value;
-            int newValue = newNode.value;
-            
-            while ((current.left != null) && (current.right != null))
-            {
-                if (newValue == currentValue)
-                {
-                    System.out.print("Value already exists in the tree. Cannot add element.");
-                }
-                else if (newValue > currentValue)
-                {
-                    if (current.right == null)
-                    {
-                        current.right = newNode;
-                    }
-                    else 
-                    {
-                        current = current.right;
-                    }
-                }
-                else if (newValue < currentValue)
-                {
-                    if (current.left == null)
-                    {
-                        current.left = newNode;
-                    }
-                    else 
-                    {
-                        current = current.left;
-                    }
-                }
-            }
-        }
+        
     }
     
     /** remove a specific node from the tree **/
@@ -130,27 +80,25 @@ class BinarySearchTree
         }
     }
     
-    /** traverse the tree implementing breadth first traversal and print node data **/
-    public void breadthFirstTraversal()
+    /** traverse the tree and print node data **/
+    public void traverse(Node root, String order)
     {
-        Node current = rootNode;
-        
-        while ((current.left != null) && (current.right != null))
+        if (order == "in-order")
         {
-            System.out.print(current.left.value + "\n" + current.value + "\n" + current.right.value + "\n");
             
-            current = current.left;
         }
-    }
-    
-    /** traverse the tree implementing depth first traversal and print node data **/
-    public void depthFirstTraversal()
-    {
-        Node current = rootNode;
-        
-        while ((current.left != null) && (current.right != null))
+        else if (order == "post-order")
         {
             
+        }
+        else 
+        {
+            if (root != null)
+            {
+                System.out.print(root.value + "\n");
+                traverse(root.left, "pre-order");
+                traverse(root.right, "pre-order");
+            }
         }
     }
     
@@ -207,5 +155,11 @@ class Node
     public Node(int nodeVal)
     {
         value = nodeVal;
+    }
+    
+    /** determine if a node has any children **/
+    public boolean hasChildren()
+    {
+        return ((left != null) || (right != null));
     }
 }

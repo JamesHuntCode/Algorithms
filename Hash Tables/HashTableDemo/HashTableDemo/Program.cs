@@ -121,7 +121,14 @@ namespace HashTableDemo
         /// <returns></returns>
         public string GetPreciseEntryAt(int index)
         {
-            return entries[index];
+            try
+            {
+                return entries[index];
+            }
+            catch (Exception)
+            {
+                return String.Empty;
+            }
         }
 
         /// <summary>
