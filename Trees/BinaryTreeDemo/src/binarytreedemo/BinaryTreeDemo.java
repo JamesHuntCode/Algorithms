@@ -22,7 +22,7 @@ public class BinaryTreeDemo {
         
         // Traverse tree.
         System.out.print("\nDepth first tree traversal example:\n\n");
-        myTree.traverse(myTree.rootNode, "pre-order");
+        myTree.traverse(myTree.rootNode, "in-order");
         
         // Remove an element from the tree.
         //System.out.print("\nNode with value 5 removed from the tree.\n\n");
@@ -85,7 +85,12 @@ class BinarySearchTree
     {
         if (order == "in-order")
         {
-            
+            if (root != null)
+            {
+                traverse(root.left, "in-order");
+                System.out.print(root.value + "\n");
+                traverse(root.right, "in-order");
+            }
         }
         else if (order == "post-order")
         {
