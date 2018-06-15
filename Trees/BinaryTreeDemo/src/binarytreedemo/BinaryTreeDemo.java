@@ -21,8 +21,14 @@ public class BinaryTreeDemo {
         myTree.rootNode.right.left = new Node(12);
         
         // Traverse tree.
-        System.out.print("\nDepth first tree traversal example:\n\n");
+        System.out.print("\nIn-order traversal example:\n\n");
         myTree.traverse(myTree.rootNode, "in-order");
+        
+        System.out.print("\nPost-order traversal example:\n\n");
+        myTree.traverse(myTree.rootNode, "post-order");
+        
+        System.out.print("\nPre-order traversal example:\n\n");
+        myTree.traverse(myTree.rootNode, "pre-order");
         
         // Remove an element from the tree.
         //System.out.print("\nNode with value 5 removed from the tree.\n\n");
@@ -70,14 +76,7 @@ class BinarySearchTree
     /** remove a specific node from the tree **/
     public void removeNode(Node removeMe)
     {
-        int valueToRemove = removeMe.value;
         
-        Node current = rootNode;
-        
-        while ((current.left != null) && (current.right != null))
-        {
-            
-        }
     }
     
     /** traverse the tree and print node data **/
@@ -94,7 +93,12 @@ class BinarySearchTree
         }
         else if (order == "post-order")
         {
-            
+            if (root != null)
+            {
+                traverse(root.right, "post-order");
+                traverse(root.left, "post-order");
+                System.out.print(root.value + "\n");
+            }
         }
         else 
         {
@@ -118,12 +122,7 @@ class BinarySearchTree
     {
         int nodeCounter = 0;
         
-        Node current = rootNode;
-        
-        while ((current.left != null) && (current.right != null))
-        {
-            
-        }
+       
         
         return nodeCounter;
     }
@@ -133,12 +132,7 @@ class BinarySearchTree
     {
         int nodeSum = 0;
         
-        Node current = rootNode;
-        
-        while ((current.left != null) && (current.right != null))
-        {
-            
-        }
+   
         
         return nodeSum;
     }
@@ -160,11 +154,5 @@ class Node
     public Node(int nodeVal)
     {
         value = nodeVal;
-    }
-    
-    /** determine if a node has any children **/
-    public boolean hasChildren()
-    {
-        return ((left != null) || (right != null));
     }
 }
