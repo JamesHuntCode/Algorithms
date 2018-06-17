@@ -1,5 +1,7 @@
 package binarytreedemo;
 
+import java.util.*;
+
 /** program to demonstrate implementation of a traditional binary search tree **/
 public class BinaryTreeDemo {
     
@@ -38,8 +40,8 @@ public class BinaryTreeDemo {
         //System.out.print("\nBreadth first tree traversal example:\n\n");
         //myTree.traverse(myTree.rootNode, "breadth-first");
         
-        //System.out.print("\nDepth first tree traversal example:\n\n");
-        //myTree.traverse(myTree.rootNode, "depth-first");
+        System.out.print("\nDepth first tree traversal example:\n\n");
+        myTree.traverse(myTree.rootNode, "depth-first");
         
         // Search the tree.
         //boolean valueLocated = ((myTree.search(new Node(17)).value) != -1);
@@ -85,7 +87,7 @@ class BinarySearchTree
     /** traverse the tree and print node data **/
     public void traverse(Node root, String order)
     {
-        if (order == "in-order")
+        if (order.equals("in-order"))
         {
             if (root != null)
             {
@@ -94,7 +96,7 @@ class BinarySearchTree
                 traverse(root.right, "in-order");
             }
         }
-        else if (order == "post-order")
+        else if (order.equals("post-order"))
         {
             if (root != null)
             {
@@ -103,7 +105,7 @@ class BinarySearchTree
                 System.out.print(root.value + "\n");
             }
         }
-        else if (order == "pre-order")
+        else if (order.equals("pre-order"))
         {
             if (root != null)
             {
@@ -112,11 +114,30 @@ class BinarySearchTree
                 traverse(root.right, "pre-order");
             }
         }
-        else if (order == "depth-first")
+        else if (order.equals("depth-first"))
         {
+            Stack<Node> nodeStack = new Stack<>();
             
+            nodeStack.add(rootNode);
+            
+            while (!nodeStack.isEmpty())
+            {
+                Node current = nodeStack.pop();
+                
+                if (current.right != null)
+                {
+                    nodeStack.add(current.right);
+                }
+                
+                if (current.left != null)
+                {
+                    nodeStack.add(current.left);
+                }
+                
+                System.out.print(current.value + "\n\n");
+            }
         }
-        else if (order == "breadth-first")
+        else if (order.equals("breadth-first"))
         {
             
         }
