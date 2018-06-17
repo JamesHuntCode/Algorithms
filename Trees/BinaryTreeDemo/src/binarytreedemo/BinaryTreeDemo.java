@@ -37,8 +37,8 @@ public class BinaryTreeDemo {
         //myTree.removeNode(new Node(5));
         
         // Traverse tree.
-        //System.out.print("\nBreadth first tree traversal example:\n\n");
-        //myTree.traverse(myTree.rootNode, "breadth-first");
+        System.out.print("\nBreadth first tree traversal example:\n\n");
+        myTree.traverse(myTree.rootNode, "breadth-first");
         
         System.out.print("\nDepth first tree traversal example:\n\n");
         myTree.traverse(myTree.rootNode, "depth-first");
@@ -134,12 +134,31 @@ class BinarySearchTree
                     nodeStack.add(current.left);
                 }
                 
-                System.out.print(current.value + "\n\n");
+                System.out.print(current.value + "\n");
             }
         }
         else if (order.equals("breadth-first"))
         {
+            Queue<Node> nodeQueue = new LinkedList<>();
             
+            nodeQueue.add(rootNode);
+            
+            while (!nodeQueue.isEmpty())
+            {
+                Node current = nodeQueue.remove();
+                
+                System.out.print(current.value + "\n");
+                
+                if (current.left != null)
+                {
+                    nodeQueue.add(current.left);
+                }
+                
+                if (current.right != null)
+                {
+                    nodeQueue.add(current.right);
+                }
+            }
         }
     }
     
@@ -186,5 +205,7 @@ class Node
     public Node(int nodeVal)
     {
         value = nodeVal;
+        left = null;
+        right = null;
     }
 }
