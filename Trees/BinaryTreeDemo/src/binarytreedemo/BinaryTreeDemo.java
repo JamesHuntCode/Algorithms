@@ -36,7 +36,10 @@ public class BinaryTreeDemo {
         
         // Traverse tree.
         //System.out.print("\nBreadth first tree traversal example:\n\n");
-        //myTree.breadthFirstTraversal();
+        //myTree.traverse(myTree.rootNode, "breadth-first");
+        
+        //System.out.print("\nDepth first tree traversal example:\n\n");
+        //myTree.traverse(myTree.rootNode, "depth-first");
         
         // Search the tree.
         //boolean valueLocated = ((myTree.search(new Node(17)).value) != -1);
@@ -100,7 +103,7 @@ class BinarySearchTree
                 System.out.print(root.value + "\n");
             }
         }
-        else 
+        else if (order == "pre-order")
         {
             if (root != null)
             {
@@ -108,6 +111,14 @@ class BinarySearchTree
                 traverse(root.left, "pre-order");
                 traverse(root.right, "pre-order");
             }
+        }
+        else if (order == "depth-first")
+        {
+            
+        }
+        else if (order == "breadth-first")
+        {
+            
         }
     }
     
