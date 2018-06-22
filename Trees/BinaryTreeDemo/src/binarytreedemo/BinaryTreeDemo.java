@@ -48,10 +48,10 @@ public class BinaryTreeDemo {
         //System.out.print("\nDoes the tree contain a 17? " + valueLocated + ".\n\n");
         
         // Is the tree empty?
-        //System.out.print("Is the tree empty? " + myTree.isEmpty() + ".\n\n");
+        System.out.print("\n\nIs the tree empty? " + myTree.isEmpty() + ".\n\n");
         
         // How many nodes inside the tree?
-        //System.out.print("How many nodes are in the tree? " + myTree.nodeCount() + ".\n\n");
+        System.out.print("How many nodes are in the tree? " + myTree.nodeCount() + ".\n\n");
         
         // What's the sum of all Node data in the tree?
         //System.out.print("What is the sum of all node data in the tree? " + myTree.sum() + ".\n\n");
@@ -168,14 +168,38 @@ class BinarySearchTree
         return new Node(-1);
     }
         
-    /* return the amount of nodes currently in the tree **/
+    /** return the amount of nodes currently in the tree **/
+    /** this method uses a depth first search **/
     public int nodeCount()
     {
-        int nodeCounter = 0;
+        if (!isEmpty())
+        {
+            int nodeCounter = 0;
+
+            Stack<Node> nodeStack = new Stack<>();
+
+            nodeStack.add(rootNode);
+
+            while (!nodeStack.isEmpty())
+            {
+                nodeCounter++;
+                Node current = nodeStack.pop();
+
+                if (current.right != null)
+                {
+                    nodeStack.add(current.right);
+                }
+
+                if (current.left != null)
+                {
+                    nodeStack.add(current.left);
+                }
+            }
+            
+            return nodeCounter;
+        }
         
-       
-        
-        return nodeCounter;
+        return -1;
     }
     
     /** return the sum of all node data **/
