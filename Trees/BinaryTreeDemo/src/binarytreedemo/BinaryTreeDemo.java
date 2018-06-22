@@ -33,8 +33,8 @@ public class BinaryTreeDemo {
         myTree.traverse(myTree.rootNode, "pre-order");
         
         // Remove an element from the tree.
-        //System.out.print("\nNode with value 5 removed from the tree.\n\n");
-        //myTree.removeNode(new Node(5));
+        System.out.print("\nNode with value 5 removed from the tree.\n\n");
+        myTree.removeNode(new Node(5));
         
         // Traverse tree.
         System.out.print("\nBreadth first tree traversal example:\n\n");
@@ -73,9 +73,44 @@ class BinarySearchTree
     }
     
     /** add a new node to the tree **/
-    public void addNode(Node newNode)
+    public void addNode(Node root, Node newNode)
     {
-        
+        if (isEmpty())
+        {
+            rootNode = newNode;
+        }
+        else 
+        {
+            if (newNode.value > root.value)
+            {
+                if (root.right == null)
+                {
+                    root.right = newNode;
+                }
+                else 
+                {
+                    addNode(root.left, newNode);
+                }
+                    
+            }
+            
+            if (newNode.value < root.value)
+            {
+                if (root.left == null)
+                {
+                    root.left = newNode;
+                }
+                else 
+                {
+                    addNode(root.right, newNode);
+                }
+            }
+            
+            if (newNode.value == root.value)
+            {
+                System.out.print("The tree already contains the value that you wish to add.");
+            }
+        }
     }
     
     /** remove a specific node from the tree **/
@@ -163,6 +198,7 @@ class BinarySearchTree
     }
     
     /** method to locate a value in the tree, if no value is located, return -1 **/
+    /** this method (of course) implements a binary search **/
     public Node search(Node root, Node findMe)
     {
         if (!isEmpty())
