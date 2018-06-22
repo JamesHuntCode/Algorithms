@@ -44,11 +44,11 @@ public class BinaryTreeDemo {
         myTree.traverse(myTree.rootNode, "depth-first");
         
         // Search the tree.
-        //boolean valueLocated = ((myTree.search(new Node(17)).value) != -1);
-        //System.out.print("\nDoes the tree contain a 17? " + valueLocated + ".\n\n");
+        boolean valueLocated = ((myTree.search(myTree.rootNode, new Node(17)).value) != -1);
+        System.out.print("\nDoes the tree contain a 17? " + valueLocated + ".\n\n");
         
         // Is the tree empty?
-        System.out.print("\n\nIs the tree empty? " + myTree.isEmpty() + ".\n\n");
+        System.out.print("Is the tree empty? " + myTree.isEmpty() + ".\n\n");
         
         // How many nodes inside the tree?
         System.out.print("How many nodes are in the tree? " + myTree.nodeCount() + ".\n\n");
@@ -163,8 +163,28 @@ class BinarySearchTree
     }
     
     /** method to locate a value in the tree, if no value is located, return -1 **/
-    public Node search(Node findMe)
+    public Node search(Node root, Node findMe)
     {
+        if (!isEmpty())
+        {
+            int valueToFind = findMe.value;
+            
+            if (valueToFind == root.value)
+            {
+                return root;
+            }
+            
+            if (valueToFind < root.value)
+            {
+                return search(root.left, findMe);
+            }
+            
+            if (valueToFind > root.value)
+            {
+                return search(root.right, findMe);
+            }
+        }
+            
         return new Node(-1);
     }
         
