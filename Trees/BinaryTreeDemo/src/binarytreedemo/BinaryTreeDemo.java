@@ -32,7 +32,7 @@ public class BinaryTreeDemo {
         
         // Remove an element from the tree.
         System.out.print("\nNode with value 5 removed from the tree.\n\n");
-        myTree.removeNode(new Node(5));
+        myTree.removeNode(myTree.rootNode, new Node(5));
         
         // Traverse tree.
         System.out.print("\nBreadth first tree traversal example:\n\n");
@@ -112,9 +112,48 @@ class BinarySearchTree
     }
     
     /** remove a specific node from the tree **/
-    public void removeNode(Node removeMe)
+    /** method uses a binary search (of course) to locate the element **/
+    public void removeNode(Node root, Node removeMe)
     {
-        
+        if (isEmpty())
+        {
+            System.out.print("\n\nElements cannot be removed because the tree is empty.\n\n");
+        }
+        else 
+        {
+            if (removeMe.value == root.value)
+            {
+                if (removeMe.left == null & removeMe.right == null)
+                {
+                    
+                }
+                
+                if (removeMe.left == null)
+                {
+                    
+                }
+                
+                if (removeMe.right == null)
+                {
+                    
+                }
+                
+                if (removeMe.right != null && removeMe.left != null)
+                {
+                    
+                }
+            }
+            
+            if (removeMe.value > root.value && root.right != null)
+            {
+                removeNode(root.right, removeMe);
+            }
+            
+            if (removeMe.value < root.value && root.left != null)
+            {
+                removeNode(root.left, removeMe);
+            }
+        }
     }
     
     /** traverse the tree and print node data **/
