@@ -9,18 +9,16 @@ public class BinaryTreeDemo {
         
         // Declare new binary search tree.
         BinarySearchTree myTree = new BinarySearchTree();
-        
-        // Add some nodes into the tree.
+
         myTree.rootNode = new Node(10);
-        
-        myTree.rootNode.left = new Node(5);
-        myTree.rootNode.right = new Node(15);
-        
-        myTree.rootNode.left.left = new Node(2);
-        myTree.rootNode.left.right = new Node(7);
-        
-        myTree.rootNode.right.right = new Node(17);
-        myTree.rootNode.right.left = new Node(12);
+
+        for (int i = 1; i < 20; i++)
+        {
+            if (i != 10)
+            {
+                myTree.addNode(myTree.rootNode, new Node(i));
+            }
+        }
         
         // Traverse tree.
         System.out.print("\nIn-order traversal example:\n\n");
@@ -44,7 +42,7 @@ public class BinaryTreeDemo {
         myTree.traverse(myTree.rootNode, "depth-first");
         
         // Search the tree.
-        boolean valueLocated = ((myTree.search(myTree.rootNode, new Node(17)).value) != -1);
+        boolean valueLocated = ((myTree.search(myTree.rootNode, new Node(10)).value) != -1);
         System.out.print("\nDoes the tree contain a 17? " + valueLocated + ".\n\n");
         
         // Is the tree empty?
@@ -89,7 +87,7 @@ class BinarySearchTree
                 }
                 else 
                 {
-                    addNode(root.left, newNode);
+                    addNode(root.right, newNode);
                 }
                     
             }
@@ -102,13 +100,13 @@ class BinarySearchTree
                 }
                 else 
                 {
-                    addNode(root.right, newNode);
+                    addNode(root.left, newNode);
                 }
             }
             
             if (newNode.value == root.value)
             {
-                System.out.print("The tree already contains the value that you wish to add.");
+                System.out.print("\n\nThe tree already contains the value that you wish to add.\n\n");
             }
         }
     }
