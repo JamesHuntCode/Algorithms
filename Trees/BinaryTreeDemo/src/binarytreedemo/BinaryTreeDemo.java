@@ -54,7 +54,7 @@ public class BinaryTreeDemo {
         System.out.print("How many nodes are in the tree? " + myTree.nodeCount() + ".\n\n");
         
         // What's the sum of all Node data in the tree?
-        //System.out.print("What is the sum of all node data in the tree? " + myTree.sum() + ".\n\n");
+        System.out.print("What is the sum of all node data in the tree? " + myTree.sum() + ".\n\n");
         
     }
     
@@ -169,7 +169,7 @@ class BinarySearchTree
     }
         
     /** return the amount of nodes currently in the tree **/
-    /** this method uses a depth first search **/
+    /** this method uses a depth first search to traverse the tree **/
     public int nodeCount()
     {
         if (!isEmpty())
@@ -203,13 +203,38 @@ class BinarySearchTree
     }
     
     /** return the sum of all node data **/
+    /** this method uses a depth first search to traverse the tree **/
     public int sum()
     {
-        int nodeSum = 0;
-        
-   
-        
-        return nodeSum;
+        if (!isEmpty())
+        {
+            int sum = 0;
+
+            Stack<Node> nodeStack = new Stack<>();
+
+            nodeStack.add(rootNode);
+
+            while (!nodeStack.isEmpty())
+            {
+                Node current = nodeStack.pop();
+                
+                sum += current.value;
+                
+                if (current.right != null)
+                {
+                    nodeStack.add(current.right);
+                }
+
+                if (current.left != null)
+                {
+                    nodeStack.add(current.left);
+                }
+            }
+            
+            return sum;
+        }
+       
+        return 0;
     }
 }
 
