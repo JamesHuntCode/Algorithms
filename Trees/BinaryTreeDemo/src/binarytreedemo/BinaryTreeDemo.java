@@ -128,17 +128,17 @@ class BinarySearchTree
                     
                 }
                 
-                if (removeMe.left == null)
+                else if (removeMe.left == null)
                 {
                     
                 }
                 
-                if (removeMe.right == null)
+                else if (removeMe.right == null)
                 {
                     
                 }
                 
-                if (removeMe.right != null && removeMe.left != null)
+                else if (removeMe.right != null && removeMe.left != null)
                 {
                     
                 }

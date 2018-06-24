@@ -36,7 +36,7 @@ namespace HashTableDemo
             // Log all data entries to the console.
             Console.WriteLine("Data currently in the hash table is as follows: \n");
 
-            myTable.Traverse();
+            myTable.FetchEntries();
 
             Console.Read();
         }
@@ -95,9 +95,9 @@ namespace HashTableDemo
         }
 
         /// <summary>
-        /// Visit every entry of the hash table (using the index array) and log the data element to the console.
+        /// Visit every entry of the hash table and log the data element to the console.
         /// </summary>
-        public void Traverse()
+        public void FetchEntries()
         {
             for (int i = 0; i < entries.Count; i++)
             {
