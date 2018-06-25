@@ -1,0 +1,7 @@
+C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.csprojResolveAssemblyReference.cache
+C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.csproj.CoreCompileInputs.cache
+C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\bin\Debug\SortingAlgorithmExamples.exe.config
+C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\bin\Debug\SortingAlgorithmExamples.exe
+C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\bin\Debug\SortingAlgorithmExamples.pdb
+C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.exe
+C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.pdb
