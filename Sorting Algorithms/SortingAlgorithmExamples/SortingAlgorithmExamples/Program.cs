@@ -15,7 +15,7 @@ namespace SortingAlgorithmExamples
         static void Main(string[] args)
         {
             // Log the sorted arrays & the initial dataset:
-            Console.WriteLine("Original dataset: \n\n");
+            Console.WriteLine("\nOriginal dataset: \n");
 
             int[] mixedNumbers = new int[10];
             Random rnd = new Random();
@@ -37,13 +37,20 @@ namespace SortingAlgorithmExamples
             }
 
             // Different sorting methods:
-            Console.WriteLine("\n\nSelection sort: \n\n");
-            Console.WriteLine("Bubble sort: \n\n");
-            Console.WriteLine("Insertion sort: \n\n");
-            Console.WriteLine("Merge sort: \n\n");
-            Console.WriteLine("Quick sort: \n\n");
-            Console.WriteLine("Counting sort: \n\n");
-            Console.WriteLine("Heap sort: \n\n");
+            Console.WriteLine("\n\nSelection sort: \n");
+            LogElements(SelectionSort(mixedNumbers));
+            Console.WriteLine("\n\nBubble sort: \n");
+            LogElements(BubbleSort(mixedNumbers));
+            Console.WriteLine("\n\nInsertion sort: \n");
+            LogElements(InsertionSort(mixedNumbers));
+            Console.WriteLine("\n\nMerge sort: \n");
+            LogElements(MergeSort(mixedNumbers));
+            Console.WriteLine("\n\nQuick sort: \n");
+            LogElements(QuickSort(mixedNumbers));
+            Console.WriteLine("\n\nCounting sort: \n");
+            LogElements(CountingSort(mixedNumbers));
+            Console.WriteLine("\n\nHeap sort: \n");
+            LogElements(HeapSort(mixedNumbers));
 
             // Program finished.
             Console.Read();
@@ -56,7 +63,11 @@ namespace SortingAlgorithmExamples
         /// <returns></returns>
         static int[] SelectionSort(int[] array)
         {
-            return array;
+            int[] sortedDataset = new int[array.Length - 1];
+
+
+
+            return sortedDataset;
         }
 
         /// <summary>
@@ -117,6 +128,18 @@ namespace SortingAlgorithmExamples
         static int[] HeapSort(int[] array)
         {
             return array;
+        }
+
+        /// <summary>
+        /// Method to iterate over an array and log the elements to the console.
+        /// </summary>
+        /// <param name="array"></param>
+        static void LogElements(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i].ToString() + " ");
+            }
         }
     }
 }

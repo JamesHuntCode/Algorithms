@@ -5,3 +5,10 @@ C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmEx
 C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\bin\Debug\SortingAlgorithmExamples.pdb
 C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.exe
 C:\git\Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.pdb
+C:\git\Data-Structures-and-Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\bin\Debug\SortingAlgorithmExamples.exe.config
+C:\git\Data-Structures-and-Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\bin\Debug\SortingAlgorithmExamples.exe
+C:\git\Data-Structures-and-Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\bin\Debug\SortingAlgorithmExamples.pdb
+C:\git\Data-Structures-and-Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.csprojResolveAssemblyReference.cache
+C:\git\Data-Structures-and-Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.csproj.CoreCompileInputs.cache
+C:\git\Data-Structures-and-Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.exe
+C:\git\Data-Structures-and-Algorithms\Sorting Algorithms\SortingAlgorithmExamples\SortingAlgorithmExamples\obj\Debug\SortingAlgorithmExamples.pdb
