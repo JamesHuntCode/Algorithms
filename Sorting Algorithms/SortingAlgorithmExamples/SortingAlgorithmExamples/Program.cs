@@ -37,7 +37,7 @@ namespace SortingAlgorithmExamples
             }
 
             // Different sorting methods:
-            Console.WriteLine("\n\nSelection sort: \n");
+            Console.WriteLine("\n\nSelection sort - 0(n^2):\n");
             LogElements(SelectionSort(mixedNumbers));
             Console.WriteLine("\n\nBubble sort: \n");
             LogElements(BubbleSort(mixedNumbers));
@@ -58,16 +58,35 @@ namespace SortingAlgorithmExamples
 
         /// <summary>
         /// Selection sort.
+        /// O(n^2) time complexity.
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
         static int[] SelectionSort(int[] array)
         {
-            int[] sortedDataset = new int[array.Length - 1];
+            int length = array.Length;
 
+            for (int i = 0; i < (length - 1); i++)
+            {
+                int minValue = i;
 
+                // Find the smallest value in the array.
+                for (int j = (i + 1); j < length; j++)
+                {
+                    if (array[j] < array[minValue])
+                    {
+                        minValue = j;
+                    }
+                }
 
-            return sortedDataset;
+                // Swap the smallest located element with the next slot to be sorted in the array.
+                int tempValue = array[minValue];
+                array[minValue] = array[i];
+                array[i] = tempValue;
+
+            }
+
+            return array;
         }
 
         /// <summary>
