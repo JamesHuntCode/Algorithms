@@ -31,7 +31,7 @@ namespace SortingAlgorithmExamples
             LogElements(BubbleSort(GetRandomArray()));
             Console.WriteLine("\n\nInsertion sort - O(n^2):\n");
             LogElements(InsertionSort(GetRandomArray()));
-            Console.WriteLine("\n\nMerge sort: \n");
+            Console.WriteLine("\n\nMerge sort - O(n log n):\n");
             LogElements(MergeSort(GetRandomArray()));
             Console.WriteLine("\n\nQuick sort: \n");
             LogElements(QuickSort(GetRandomArray()));
@@ -141,6 +141,8 @@ namespace SortingAlgorithmExamples
 
         /// <summary>
         /// Merge sort.
+        /// O(n log n) time complexity.
+        /// Splits one array into two sub-arrays and then merges the two sorted sub-array back into one sorted array.
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
