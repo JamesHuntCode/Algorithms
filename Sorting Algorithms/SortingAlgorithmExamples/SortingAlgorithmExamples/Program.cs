@@ -18,7 +18,6 @@ namespace SortingAlgorithmExamples
             Console.WriteLine("\nOriginal dataset: \n");
 
             int[] mixedNumbers = new int[10];
-            Random rnd = new Random();
 
             mixedNumbers[0] = 5;
             mixedNumbers[1] = 7;
@@ -37,9 +36,9 @@ namespace SortingAlgorithmExamples
             }
 
             // Different sorting methods:
-            Console.WriteLine("\n\nSelection sort - 0(n^2):\n");
+            Console.WriteLine("\n\nSelection sort - O(n^2):\n");
             LogElements(SelectionSort(mixedNumbers));
-            Console.WriteLine("\n\nBubble sort: \n");
+            Console.WriteLine("\n\nBubble sort - O(n^2):\n");
             LogElements(BubbleSort(mixedNumbers));
             Console.WriteLine("\n\nInsertion sort: \n");
             LogElements(InsertionSort(mixedNumbers));
@@ -66,6 +65,7 @@ namespace SortingAlgorithmExamples
         {
             int length = array.Length;
 
+            // Move across the array indexes
             for (int i = 0; i < (length - 1); i++)
             {
                 int minValue = i;
@@ -91,11 +91,24 @@ namespace SortingAlgorithmExamples
 
         /// <summary>
         /// Bubble sort.
+        /// O(n^2) time complexity.
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
         static int[] BubbleSort(int[] array)
         {
+            int length = array.Length;
+
+            for (int i = 0; i < (length - 1); i++)
+            {
+                for (int j = 0; j < (j - i - length); j++)
+                {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+            
             return array;
         }
 
