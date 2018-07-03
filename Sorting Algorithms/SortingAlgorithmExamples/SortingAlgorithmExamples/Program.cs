@@ -65,7 +65,7 @@ namespace SortingAlgorithmExamples
         {
             int length = array.Length;
 
-            // Move across the array indexes
+            // Move across the array indexes.
             for (int i = 0; i < (length - 1); i++)
             {
                 int minValue = i;
@@ -99,13 +99,19 @@ namespace SortingAlgorithmExamples
         {
             int length = array.Length;
 
+            // Loop over the entire dataset.
             for (int i = 0; i < (length - 1); i++)
             {
+                // Compare all indexes with the index one shift to the right.
                 for (int j = 0; j < (j - i - length); j++)
                 {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    // Interchange them if the left is smaller than the right.
+                    if (array[j] > array[j + 1])
+                    {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
                 }
             }
             
@@ -119,6 +125,9 @@ namespace SortingAlgorithmExamples
         /// <returns></returns>
         static int[] InsertionSort(int[] array)
         {
+
+
+
             return array;
         }
 
