@@ -34,7 +34,7 @@ namespace SortingAlgorithmExamples
             Console.WriteLine("\n\nMerge sort - O(n log n):\n");
             LogElements(MergeSort(GetRandomArray()));
             Console.WriteLine("\n\nQuick sort - O(n log n):\n");
-            LogElements(QuickSort(GetRandomArray(), 0, GetRandomArray().Length));
+            LogElements(QuickSort(GetRandomArray(), 0, (GetRandomArray().Length - 1)));
             Console.WriteLine("\n\nCounting sort: \n");
             LogElements(CountingSort(GetRandomArray()));
             Console.WriteLine("\n\nHeap sort: \n");
@@ -155,7 +155,7 @@ namespace SortingAlgorithmExamples
         /// Partition method needed to execute the quicksort algorithm.
         /// </summary>
         /// <returns></returns>
-        static int QuickSortPartition(int[] array, int low, int hight)
+        static int QuickSortPartition(int[] array, int low, int high)
         {
             return -1;
         }
@@ -163,11 +163,23 @@ namespace SortingAlgorithmExamples
         /// <summary>
         /// Quick sort.
         /// O(n log n) time complexity.
+        /// Pick a pivot point, place all elements smaller than pivot to the left and element larger to the right.
+        /// Perform the above action until the array is fully sorted.
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
-        static int[] QuickSort(int[] array, int low, int hight)
+        static int[] QuickSort(int[] array, int low, int high)
         {
+            if (low < high)
+            {
+                // The old pivot is now in the correct place - ready to move on.
+                int pi = QuickSortPartition(array, low, high);
+
+                // Now recursively sort the elements before and after the new parition.
+                QuickSort(array, low, (pi - 1));
+                QuickSort(array, (pi + 1), high);
+            }
+
             return array;
         }
 
