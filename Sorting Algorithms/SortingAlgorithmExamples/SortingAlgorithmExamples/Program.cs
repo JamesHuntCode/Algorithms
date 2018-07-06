@@ -157,7 +157,29 @@ namespace SortingAlgorithmExamples
         /// <returns></returns>
         static int QuickSortPartition(int[] array, int low, int high)
         {
-            return -1;
+            int pivot = array[high];
+            int i = (low - 1);
+
+            for (int j = low; j < high; j++)
+            {
+                // Check if the current element is smaller than or equal to the pivot.
+                if (array[j] <= pivot)
+                {
+                    i++;
+
+                    // Swap the i and j indexes.
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+
+            // Swap array[i + 1] and array[high] (or the pivot index).
+            int tempIndex = array[i + 1];
+            array[i + 1] = array[high];
+            array[high] = tempIndex;
+
+            return (i + 1);
         }
 
         /// <summary>
