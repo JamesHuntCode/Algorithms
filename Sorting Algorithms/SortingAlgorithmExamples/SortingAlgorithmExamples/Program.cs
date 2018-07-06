@@ -33,8 +33,8 @@ namespace SortingAlgorithmExamples
             LogElements(InsertionSort(GetRandomArray()));
             Console.WriteLine("\n\nMerge sort - O(n log n):\n");
             LogElements(MergeSort(GetRandomArray()));
-            Console.WriteLine("\n\nQuick sort: \n");
-            LogElements(QuickSort(GetRandomArray()));
+            Console.WriteLine("\n\nQuick sort - O(n log n):\n");
+            LogElements(QuickSort(GetRandomArray(), 0, GetRandomArray().Length));
             Console.WriteLine("\n\nCounting sort: \n");
             LogElements(CountingSort(GetRandomArray()));
             Console.WriteLine("\n\nHeap sort: \n");
@@ -152,11 +152,21 @@ namespace SortingAlgorithmExamples
         }
 
         /// <summary>
+        /// Partition method needed to execute the quicksort algorithm.
+        /// </summary>
+        /// <returns></returns>
+        static int QuickSortPartition(int[] array, int low, int hight)
+        {
+            return -1;
+        }
+
+        /// <summary>
         /// Quick sort.
+        /// O(n log n) time complexity.
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
-        static int[] QuickSort(int[] array)
+        static int[] QuickSort(int[] array, int low, int hight)
         {
             return array;
         }
